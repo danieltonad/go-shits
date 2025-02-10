@@ -1,8 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
-	var username string = "John"
-	fmt.Printf("Username: %T", username)
+	welcome_msg := "Welcome Pussy"
+	fmt.Println(welcome_msg)
+	age_reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter your age: ")
+	age, _ := age_reader.ReadString('\n')
+	fmt.Println("You are", age, "years old")
 }
