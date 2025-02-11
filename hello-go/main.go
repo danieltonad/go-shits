@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func simple_read() {
@@ -25,7 +26,7 @@ func simple_read_type_conversion() {
 	rating, _ := rate_reader.ReadString('\n')
 	// fmt.Println("The rating is", rating)
 
-	rating_no, err := strconv.ParseInt(rating, 10, 64)
+	rating_no, err := strconv.ParseInt(strings.TrimSpace(rating), 10, 64)
 	if err != nil {
 		fmt.Println(err)
 	} else {
