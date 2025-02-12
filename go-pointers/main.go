@@ -4,8 +4,8 @@ import "fmt"
 
 func main() {
 	fmt.Println("Pointers in Go")
-
-	var ptr *int
-
-	fmt.Println("Pointer: ", ptr)
+	myNumber := 24
+	var ptr = &myNumber
+	fmt.Println("Pointer Address: ", ptr)
+	fmt.Println("Pointer Value: ", *ptr)
 }
