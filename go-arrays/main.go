@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func array() {
 
@@ -25,12 +28,13 @@ func slices() {
 
 	scores := make([]int, 5)
 	scores[0] = 1
-	scores[1] = 2
-	scores[2] = 3
+	scores[1] = 264
+	scores[2] = 394
 	scores[3] = 4
 	scores[4] = 5
-	scores = append(scores, 6)
+	scores = append(scores, 856)
 	scores = append(scores, 7)
+	sort.Ints(scores)
 	fmt.Println(scores)
 }
 
