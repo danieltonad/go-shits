@@ -26,6 +26,7 @@ func slices() {
 	fruits = append(fruits, "Orange")
 	fmt.Println(fruits)
 
+	//using make to create a slice
 	scores := make([]int, 5)
 	scores[0] = 1
 	scores[1] = 264
@@ -34,10 +35,19 @@ func slices() {
 	scores[4] = 5
 	scores = append(scores, 856)
 	scores = append(scores, 7)
+	//playing arround sort with slices
 	sort.Ints(scores)
+	//remove from slice
+	fmt.Println(scores)
+	scores = append(scores[:2], scores[3:]...)
 	fmt.Println(scores)
 }
 
+func maps() {
+
+}
+
 func main() {
-	slices()
+	// slices()
+	maps()
 }
