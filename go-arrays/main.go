@@ -44,6 +44,15 @@ func slices() {
 }
 
 func maps() {
+	cities := make(map[string]string)
+	cities["Kenya"] = "Nairobi"
+	cities["Uganda"] = "Kampala"
+	cities["Tanzania"] = "Dodoma"
+	cities["Rwanda"] = "Kigali"
+	for key, value := range cities {
+		fmt.Println(key, value)
+	}
+	//delete from map
 
 }
 
