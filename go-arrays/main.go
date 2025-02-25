@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"sort"
+	"time"
 )
 
 func array() {
@@ -62,12 +64,17 @@ func maps() {
 
 }
 
+func RandomB() {
+	rand.Seed(time.Now().UnixNano())
+	fmt.Println(rand.Intn(10900000))
+}
+
 func main() {
 	// slices()
 	// maps()
-
-	book := Book{Id: 1, Name: "The Alchemist", Author: "Paulo Coelho"}
-	if book.Id = 10; book.Id == 1 {
-		fmt.Printf("Id: %v, Name: %v and Author: %v", book.Id, book.Name, book.Author)
-	}
+	RandomB()
+	// book := Book{Id: 1, Name: "The Alchemist", Author: "Paulo Coelho"}
+	// if book.Id = 10; book.Id == 1 {
+	// 	fmt.Printf("Id: %v, Name: %v and Author: %v", book.Id, book.Name, book.Author)
+	// }
 }
