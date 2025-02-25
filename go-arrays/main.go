@@ -67,7 +67,7 @@ func main() {
 	// maps()
 
 	book := Book{Id: 1, Name: "The Alchemist", Author: "Paulo Coelho"}
-	if book.Id == 1 {
+	if book.Id = 10; book.Id == 1 {
 		fmt.Printf("Id: %v, Name: %v and Author: %v", book.Id, book.Name, book.Author)
 	}
 }
