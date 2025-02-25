@@ -57,8 +57,8 @@ func maps() {
 	cities["Uganda"] = "Kampala"
 	cities["Tanzania"] = "Dodoma"
 	cities["Rwanda"] = "Kigali"
-	for key, value := range cities {
-		fmt.Println(key, value)
+	for index, value := range cities {
+		fmt.Println(index, value)
 	}
 	//delete from map
 
@@ -66,7 +66,29 @@ func maps() {
 
 func RandomB() {
 	rand.Seed(time.Now().UnixNano())
-	fmt.Println(rand.Intn(10900000))
+	dice := rand.Intn(6)
+
+ekpon:
+	fmt.Println("I am here")
+
+	switch dice {
+	case 1:
+		fmt.Println("You rolled a 1")
+	case 2:
+		fmt.Println("You rolled a 2")
+		fallthrough
+	case 3:
+		fmt.Println("You rolled a 3")
+	case 4:
+		fmt.Println("You rolled a 4")
+		goto ekpon
+	case 5:
+		fmt.Println("You rolled a 5")
+	case 6:
+		fmt.Println("You rolled a 6")
+	default:
+		fmt.Println("Invalid Roll")
+	}
 }
 
 func main() {
