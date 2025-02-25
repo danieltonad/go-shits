@@ -21,6 +21,12 @@ func array() {
 
 }
 
+type Book struct {
+	Id     int
+	Name   string
+	Author string
+}
+
 func slices() {
 	var fruits = []string{"Apple", "Banana", "Mango"}
 	fruits = append(fruits, "Orange")
@@ -58,5 +64,10 @@ func maps() {
 
 func main() {
 	// slices()
-	maps()
+	// maps()
+
+	book := Book{Id: 1, Name: "The Alchemist", Author: "Paulo Coelho"}
+	if book.Id == 1 {
+		fmt.Printf("Id: %v, Name: %v and Author: %v", book.Id, book.Name, book.Author)
+	}
 }
