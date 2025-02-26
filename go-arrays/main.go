@@ -91,10 +91,19 @@ ekpon:
 	}
 }
 
+func add_integers(ints ...int) int {
+	total := 0
+	for _, value := range ints {
+		total += value
+	}
+	return total
+}
+
 func main() {
 	// slices()
 	// maps()
-	RandomB()
+	// RandomB()
+	fmt.Printf("Total: %v", add_integers(1, 2, -3, 4, 5, 6, 7, 8, 9, 10))
 	// book := Book{Id: 1, Name: "The Alchemist", Author: "Paulo Coelho"}
 	// if book.Id = 10; book.Id == 1 {
 	// 	fmt.Printf("Id: %v, Name: %v and Author: %v", book.Id, book.Name, book.Author)
