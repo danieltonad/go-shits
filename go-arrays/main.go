@@ -103,9 +103,13 @@ func main() {
 	// slices()
 	// maps()
 	// RandomB()
-	fmt.Printf("Total: %v", add_integers(1, 2, -3, 4, 5, 6, 7, 8, 9, 10))
+	// fmt.Printf("Total: %v", add_integers(1, 2, -3, 4, 5, 6, 7, 8, 9, 10))
 	// book := Book{Id: 1, Name: "The Alchemist", Author: "Paulo Coelho"}
 	// if book.Id = 10; book.Id == 1 {
 	// 	fmt.Printf("Id: %v, Name: %v and Author: %v", book.Id, book.Name, book.Author)
 	// }
+
+	for i := 0; i < 1e9; i++ {
+		fmt.Printf("\r%v", i)
+	}
 }
