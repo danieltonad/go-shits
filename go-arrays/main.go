@@ -110,8 +110,7 @@ func main() {
 	// }
 
 	start := time.Now()
-	for i := 0; i < 1e12; i++ {
-
+	for i := 0; i < 1e11; i++ {
 	}
 	fmt.Printf("Time taken: %v", time.Since(start))
 }
