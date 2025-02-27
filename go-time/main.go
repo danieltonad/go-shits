@@ -7,7 +7,7 @@ import (
 
 func delay_me() {
 	time.Sleep(5 * time.Second)
-	fmt.Printf("I am delayed %v", time.Second)
+	fmt.Printf("I am delayed %v \n", time.Second)
 }
 
 func main() {
@@ -16,5 +16,5 @@ func main() {
 
 	start := time.Now()
 	delay_me()
-	fmt.Println("Time taken to delay (s)", time.Since(start))
+	fmt.Println("Time taken to delay", time.Since(start))
 }

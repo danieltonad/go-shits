@@ -109,7 +109,9 @@ func main() {
 	// 	fmt.Printf("Id: %v, Name: %v and Author: %v", book.Id, book.Name, book.Author)
 	// }
 
-	for i := 0; i < 1e9; i++ {
-		fmt.Printf("\r%v", i)
+	start := time.Now()
+	for i := 0; i < 1e12; i++ {
+
 	}
+	fmt.Printf("Time taken: %v", time.Since(start))
 }
