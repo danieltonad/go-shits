@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"time"
 )
 
 type User struct {
@@ -58,5 +59,6 @@ func main() {
 	users = append(users, User{Name: "Bleje", Age: 20, Address: "40, lorem, ipsum"})
 	users = append(users, User{Name: "Bleje", Age: 20, Address: "40, lorem, ipsum"})
 
-	writeToCsv("csv_test_file.csv", users)
+	go writeToCsv("csv_test_file.csv", users)
+	time.Sleep(10)
 }
