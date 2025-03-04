@@ -33,6 +33,7 @@ func writeToCsv(path string, data []User) {
 			panic(err)
 		}
 	}
+	fmt.Println("Data written to file successfully")
 }
 
 func main() {
@@ -49,6 +50,13 @@ func main() {
 
 	// os.WriteFile("file.txt", []byte(content), 0644)
 	users := []User{}
-	append(users, User{Name: "Damiel", Age: 25, Address: "40, lorem, ipsum"})
+	users = append(users, User{Name: "Damiel", Age: 25, Address: "40, lorem, ipsum"})
+	users = append(users, User{Name: "Bleje", Age: 20, Address: "40, lorem, ipsum"})
+	users = append(users, User{Name: "Bleje", Age: 20, Address: "40, lorem, ipsum"})
+	users = append(users, User{Name: "Bleje", Age: 20, Address: "40, lorem, ipsum"})
+	users = append(users, User{Name: "Bleje", Age: 20, Address: "40, lorem, ipsum"})
+	users = append(users, User{Name: "Bleje", Age: 20, Address: "40, lorem, ipsum"})
+	users = append(users, User{Name: "Bleje", Age: 20, Address: "40, lorem, ipsum"})
 
+	writeToCsv("csv_test_file.csv", users)
 }
