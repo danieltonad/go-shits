@@ -3,9 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
+	"net/http"
 	"os"
 	"strconv"
 	"strings"
+	"sync"
 )
 
 func simple_read() {
@@ -34,7 +37,48 @@ func simple_read_type_conversion() {
 	}
 }
 
+func fetch_url(url string, ch chan<- string, wg *sync.WaitGroup) {
+	res, err := http.Get(url)
+	if err != nil {
+		panic(err)
+	}
+
+	defer res.Body.Close()
+	content, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	ch <- string(content)
+	wg.Done()
+}
+
+func concurrency_trial() {
+	urls := []string{
+		"https://ipinfo.io/json",
+		"https://ipinfo.io/json",
+		"https://ipinfo.io/json",
+		"https://ipinfo.io/json",
+	}
+
+	channel := make(chan string, len(urls))
+	var wg sync.WaitGroup
+
+	for _, url := range urls {
+		wg.Add(1)
+		go fetch_url(url, channel, &wg)
+	}
+
+	wg.Wait()
+	close(channel)
+
+	for content := range channel {
+		fmt.Println(content)
+	}
+}
+
 func main() {
 	// simple_read()
-	simple_read_type_conversion()
+	// simple_read_type_conversion()
+	concurrency_trial()
 }

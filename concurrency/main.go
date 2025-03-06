@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"sync"
+	"time"
 )
 
 func fetchURL(wg *sync.WaitGroup, url string, results chan<- string) {
@@ -181,38 +182,11 @@ func main() {
 		"https://ipinfo.io/json",
 		"https://ipinfo.io/json",
 		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
-		"https://ipinfo.io/json",
 	}
 
 	var wg sync.WaitGroup
 	results := make(chan string, len(urls)) // Buffered channel to collect results
-
+	start := time.Now()
 	// Launch a goroutine for each URL
 	for _, url := range urls {
 		wg.Add(1)
@@ -229,4 +203,5 @@ func main() {
 		fmt.Printf("No: %v \n", i)
 		fmt.Println(result)
 	}
+	fmt.Printf("Total time taken: %v\n", time.Since(start))
 }
