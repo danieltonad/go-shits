@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"os"
-	// "github.com/joho/godotenv"
+	"gomongo/database"
 )
+
+// "github.com/joho/godotenv"
 
 func main() {
 
@@ -19,5 +20,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(os.Getenv("MONGO_URL"))
+
+	database.ConnectMongo()
+
+	// Get a collection
+	collection := database.GetCollection("users")
+
+	fmt.Println("Using MongoDB Collection:", collection.Name())
+
 }
